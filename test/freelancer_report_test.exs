@@ -95,5 +95,15 @@ defmodule FreelancerReportTest do
 
       assert response == expected_response
     end
+
+    test "if the argument isn't a List, returns an error" do
+      files = "potato"
+
+      response = FreelancerReport.build_from_list(files)
+
+      expected_response = {:error, "List of file names expected"}
+
+      assert response == expected_response
+    end
   end
 end
