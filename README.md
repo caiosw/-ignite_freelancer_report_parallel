@@ -1,10 +1,18 @@
 # FreelancerReport
 
-This is an Elixir project from Rocketseat's Ignite course (Chapter 1, module 2)
+This is an Elixir project from Rocketseat's Ignite course (Chapter 1 - Module 2 - Challenge 2)
+
+This repo is a clone of https://github.com/caiosw/ignite_freelancer_report with a new function build_from_list/1. This function accepts as it argument a List of file names, in this exercise:
+```
+["part_1.csv", "part_2.csv", "part_3.csv"]
+```
+This executes faster than build() because of the Task.async() method.
+
 
 The project's goal is to create a Map report from a CSV file, aggregating the results as bellow:
 
-Input file format: 
+Input file format:
+```
 Daniele,7,29,4,2018
 Mayk,4,9,12,2019
 Daniele,5,27,12,2016
@@ -24,11 +32,12 @@ Diego,3,11,9,2016
 Mayk,7,28,7,2017
 Mayk,7,3,9,2016
 Danilo,6,28,2,2019
-Diego,4,15,8,2017 
+Diego,4,15,8,2017
+```
 
 Expected output:
-
-  %{
+```elixir
+ %{
    all_hours: %{
      "Cleiton" => 4,
      "Daniele" => 21,
@@ -59,4 +68,5 @@ Expected output:
      "Joseph" => %{"2017" => 3},
      "Mayk" => %{"2016" => 7, "2017" => 8, "2019" => 4}
    }
-  }
+ }
+```
